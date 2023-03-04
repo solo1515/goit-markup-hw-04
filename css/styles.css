@@ -10,6 +10,26 @@ color:var(--brand-color);
 ul{
     list-style-type:none;
 }
+h1,
+h2,
+h3,
+h4,
+p{
+margin-bottom: 0;
+margin-top: 0;
+}
+ul,
+ol{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+img{
+    display: block;
+}
+button{
+    cursor: pointer;
+}
 /* logo */
 .logo-name span {
     color: #4D5AE5;
@@ -17,6 +37,7 @@ ul{
 
 .logo-name {
     font-family: 'Raleway';
+    display: flex;
     font-weight: 800;
     font-size: 18px;
     text-decoration: none;
@@ -27,10 +48,33 @@ ul{
 .down{
     color:white;
 }
+.container{
+width: 1158px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 15px;
+padding-right: 15px;
+}
+.page-header-container{
+    display: flex;
+    align-items: center;
+}
+.menu{
+    display:flex;
+    align-items: center;
+}
+.logo-name{
+    margin-right: 76px;
+}
+.menu-item:not(:last-child){
+    margin-right: 40px;
 
+}
 /* header-style */
 .main-head{
     background-color:white;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .top-menu {
@@ -45,17 +89,31 @@ ul{
     color: #434455;
 
 }
-.contact{
+.contact-mail{
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
     text-decoration: none;
     color:var(--desc-color);
+    margin-left: auto;
 }
-.contact:hover {
+.contact-phone{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--desc-color);
+    margin-left: 40px;
+
+}
+.contact-mail:hover {
     color: #4D5AE5;
    
 } 
+.contact-phone:hover {
+    color: #4D5AE5;
+
+}
 .top-menu:focus {
     color:#434455;
 
@@ -71,37 +129,68 @@ ul{
     letter-spacing: 0.02em;
     color:#E7E9FC;
 }
+.head-border{
+    border: 1px solid #E7E9FC;
+  
+}
+
 /* buttons */
 
 .button-order{
-    background: #4D5AE5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    color: white;
-    font-weight: 600;
+   padding-top: 16px;
+   padding-bottom: 16px;
+   padding-left: 32px;
+   padding-right: 32px;
+    font-family: 'Roboto';
+    font-weight: 500;
     font-size: 16px;
-    line-height: 1.18;
+    line-height: 24px;
     letter-spacing: 0.04em;
+    background: #4D5AE5;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
 }
 .button-order:hover {
-    background: #4D5AE5;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    border-radius: 4px;
-}
-.button-menu{
-    background: #F4F4FD;
-    color: #4D5AE5;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-}
-.button-menu:hover{
-    background: #4D5AE5;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    color:white;
+    background: #404BBF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
 }
 
+.buttons{
+ display: flex;
+ justify-content: center;
+ padding-top: 96px;
+ padding-bottom: 72px;
+}
+.button-menu:not(:last-child){
+    margin-right: 24px;
+}
+.buttons-decor{
+   padding-top: 12px;
+   padding-bottom: 12px;
+   padding-left: 24px;
+   padding-right: 24px;
+   font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+background: #F4F4FD;
+border: 1px solid #E7E9FC;
+border-radius: 4px;
+color: #4D5AE5;
+}
+.buttons-decor:hover{
+    background: #404BBF;
+box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+border-radius: 4px;
+border: 1px solid #404BBF;
+color: #FFFFFF;
+
+}
+   
 /* text-decor */
 
 h1{
@@ -131,14 +220,15 @@ h2{
     color: var(--desc-color);
 }
 
-.head{
-    background-color: var(--brand-color);
+.header-title{
+    padding-top: 188px;;
 }
 .team{
     background: #F4F4FD;
 }
 .footer{
     background-color: var(--brand-color);
+    min-height: 310px;
 }
 .descriptions {
     background-color: var(--main-color);
@@ -146,8 +236,134 @@ h2{
 
 .work {
     background-color: var(--main-color);
+    padding-bottom: 120px;
 }
 
 .main {
     background-color: var(--main-color);
+}
+
+/* ******POSITION***** */
+
+.head {
+    background-color: var(--brand-color);
+    Height: 600px;
+    text-align: center
+}
+
+.container-header {
+    width: 507px;
+    margin: 0 auto 48px;
+}
+.title-name{
+margin-bottom: 8px;
+}
+.description-work{
+    display: flex;
+}
+.descriptions{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.names{
+        margin-right: 24px;
+        min-width:264px;
+}
+.work-title{
+    text-align: center;
+    margin-bottom: 72px;
+}
+.images{
+    display:flex;
+    justify-content: space-between;
+}
+.team{
+    padding-bottom: 120px;
+    background-color: #F4F4FD;
+}
+.team-name{
+   text-align: center;
+   padding-top: 120px;
+   margin-bottom: 72px;
+
+}
+.card{
+    width: 264px;
+    height: 380px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
+        
+}
+.cards{
+    padding-bottom: 120px;
+}
+.team-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap:24px;
+}
+.title{
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+.description{
+    text-align: center;
+    margin-bottom: 32px;
+}
+.description-portfolio{
+    margin-left: 16px;
+    margin-bottom: 32px;
+}
+.title-porttfolio{
+    margin-top: 32px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+}
+.footer{
+    padding-top: 100px;
+    height: 310px;
+}
+.down{
+    margin-bottom: 16px;
+}
+.footer-desc{
+    width: 264px;
+    height: 72px;
+}
+
+/* ****cards**** */
+.cards{
+display: flex;
+    flex-wrap: wrap;
+    gap:24px;
+}
+.cards-row{
+    width: 360px;
+    height: 420px;
+}
+.border-line{
+   border: 1px solid #E7E9FC;
+}
+.title{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: #2E2F42;
+margin-top: 32px;
+margin-bottom: 8px;
+}
+.description{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: #434455;
+margin-bottom: 32px;
 }
