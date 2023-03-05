@@ -3,7 +3,12 @@
     --desc-color: #434455;
     --main-color:#ffffff;
     --team-color:#f4f4fd;
+
+/* ***змінні other*** */
+    --indent: 24px;
+    --items: 4;
 }
+
 body{
 font-family: 'Roboto', normal;
 color:var(--brand-color);
@@ -45,12 +50,11 @@ button{
     letter-spacing: 0.03em;
     color: var(--brand-color);
     margin-right: 76px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 .down{
     color:var(--main-color);
-}
-.logo-down-possition{
-    margin-bottom: 16px;
 }
 .container{
 width: 1158px;
@@ -65,6 +69,9 @@ padding-right: 15px;
     align-items: center;
     justify-content: space-between;
 }
+.main-head{
+        border-bottom: 1px solid #e7e8fc;
+}
 .nav{
     display: flex;
     align-items: center;
@@ -73,15 +80,11 @@ padding-right: 15px;
     display: flex;
     align-items: center;
 }
+
 .menu-item:not(:last-child){
     margin-right: 40px;
 }
 /* header-style */
-.main-head{
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
-
 .top-menu {
     font-weight: 600;
     font-size: 16px;
@@ -89,18 +92,20 @@ padding-right: 15px;
     line-height :1.5;
     letter-spacing: 0.02em;
     color: var(--brand-color);
+        padding-top: 24px;
+            padding-bottom: 24px;
 }
 .top-menu:hover {
     color: #434455;
 
 }
-.contact-mail {
+.mail {
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
     color: var(--desc-color);
 }
-.contact-phone{
+.phone{
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
@@ -108,11 +113,11 @@ padding-right: 15px;
     margin-left: 40px;
 
 }
-.contact-mail:hover {
+.mail:hover {
     color: #4D5AE5;
    
 } 
-.contact-phone:hover {
+.phone:hover {
     color: #4D5AE5;
 
 }
@@ -120,7 +125,10 @@ padding-right: 15px;
     color:#434455;
 
 }
-
+.contact{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
 .contact:focus {
     color: #4D5AE5;
 }
@@ -130,6 +138,7 @@ padding-right: 15px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color:#E7E9FC;
+    margin-top: 8px;
 }
 .head-border{
     border: 1px solid #E7E9FC;
@@ -207,13 +216,6 @@ h2{
     line-height: 1.11;
     letter-spacing: 0.02em;
 }
-.title-name{
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-}
-
 
 .team{
     background: var(--team-color);
@@ -258,6 +260,11 @@ h2{
 }
 .description-work{
     display: flex;
+    flex-wrap: wrap;
+    gap:var(--indent);
+}
+.names{
+    flex-basis: calc((100% - var(--indent) * (var(--items) -1)) / var(--items)) ;
 }
 .description{
     letter-spacing: 0.02em;;
@@ -265,16 +272,6 @@ h2{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-}
-.names{
-    flex-basis: 264px;
-    align-items: center;
-}
-.names:not(:last-child){
-    margin-right: 24px;
-}
-.name{
-    margin-bottom: 8px;
 }
 .work-title{
     text-align: center;
@@ -295,12 +292,15 @@ h2{
 
 }
 .card{
-    flex-basis: 264px;
-    gap: 24px;
-    height: 380px;
+    flex-basis: calc((100% - var(--indent) * (var(--items) -1)) / var(--items)) ;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px; 
     background-color: var(--main-color);  
+}
+.title-description{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 16px;
 }
 .main{
     padding-top: 96px;
@@ -309,16 +309,19 @@ h2{
 .team-cards{
     display: flex;
         flex-wrap: wrap;
-        gap:24px;
+        gap:var(--indent);
+}
+.team-items{
+
 }
 .title{
     text-align: center;
-    margin-top: 32px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
     margin-bottom: 8px;
-}
-.description-portfolio{
-    margin-left: 16px;
-    margin-bottom: 32px;
 }
 .description-team {
     font-size: 16px;
@@ -328,11 +331,7 @@ h2{
     text-align: center;
 }
 
-.title-porttfolio{
-    padding-top: 32px;
-    margin-bottom: 8px;
-    margin-left: 16px;
-}
+
 .footer{
     padding-top: 100px;
 }
@@ -349,23 +348,18 @@ display: flex;
     column-gap: 24px;
 }
 .cards-row{
-    flex-basis: 360px;
+flex-basis: calc((100% - var(--indent) * (3) -1)) / 3;
 
 }
 .border-line{
    border: 1px solid #E7E9FC;
    border-top: none;
 }
-.title{
-   font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.02em;
-    color: #2E2F42;
-    margin-top: 32px;
-    margin-bottom: 8px;
-}
 .img{
+    display:block;
     max-width: 100%;
     height:auto;
+}
+.title-porttfolio{
+    margin-bottom: 8px;
 }
